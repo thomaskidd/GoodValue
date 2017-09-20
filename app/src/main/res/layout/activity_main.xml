@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    tools:context="com.example.thomaskidd.goodvalue.MainActivity">
+
+
+    <!-- Currency in use -->
+    <TextView
+        android:id="@+id/currencyText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Currency"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/currencyQuant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currencyText"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="1.00"/>
+
+    <Spinner
+        android:id="@+id/currencySpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/currencyQuant"
+        android:layout_below="@+id/currencyText"
+        android:prompt="@string/currency_prompt"
+        android:entries="@array/currency_array"/>
+
+    <!-- Units in use -->
+    <TextView
+        android:id="@+id/unitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/currencyQuant"
+        android:text="Quantity"/>
+
+    <EditText
+        android:id="@+id/unitQuant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/unitText"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="1.00"/>
+
+    <Spinner
+        android:id="@+id/unitSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/unitQuant"
+        android:layout_below="@+id/unitText"
+        android:prompt="@string/unit_prompt"
+        android:entries="@array/unit_array"/>
+
+
+    <!-- Target Currency in use -->
+    <TextView
+        android:id="@+id/targetCurrText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/unitQuant"
+        android:layout_marginTop="30dp"
+        android:text="Target Currency"/>
+
+    <Spinner
+        android:id="@+id/targetCurrSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/currency_prompt"
+        android:entries="@array/currency_array"
+        android:layout_below="@+id/unitQuant"
+        android:layout_alignLeft="@+id/unitSpinner"
+        android:layout_marginTop="30dp"/>
+
+    <!-- Target Units in use -->
+    <TextView
+        android:id="@+id/targetUnitText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/targetCurrText"
+        android:layout_marginTop="30dp"
+        android:text="Target Units"/>
+
+    <Spinner
+        android:id="@+id/targetUnitSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/unit_prompt"
+        android:entries="@array/unit_array"
+        android:layout_below="@+id/targetCurrText"
+        android:layout_alignLeft="@+id/unitSpinner"
+        android:layout_marginTop="30dp"/>
+
+    <!-- Result Display -->
+    <TextView
+        android:id="@+id/priceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/targetUnitSpinner"
+        android:layout_above="@+id/convert"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:text="$1.00/L"
+        />
+    <!-- Calculate Button -->
+    <Button
+        android:id="@+id/convert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/smartBanner"
+        android:text="Convert"/>
+
+    <!-- Banner Ad -->
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/smartBanner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="ca-app-pub-3940256099942544/6300978111">
+    </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>
