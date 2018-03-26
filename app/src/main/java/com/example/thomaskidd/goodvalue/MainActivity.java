@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -116,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     smartBanner.loadAd(newAd);
                 }
                 catch (Exception e) {
-                    updatePriceView("Error.");
+                    updatePriceView("Uh oh. Look' like there's an error.");
                 }
             }
         });
@@ -137,13 +136,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Respond to Action Button input
+    /*
     public boolean onOptionsSelectedItem(MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.about:
-                
+
         }
-    }
+    } */
 
     //Private wrapper class to pass variables to Convert AsyncTask
     private class Wrapper {
